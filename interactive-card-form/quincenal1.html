@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio Quincenal 1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="contenedor">
+      <section class="seccionTarjeta">
+        <div class="frenteTC">
+          <div>
+            <img
+              src="img/card-logo.svg"
+              alt="logoTarjeta"
+              class="logoTarjeta"
+            />
+          </div>
+          <div id="TCNumeros">
+            <p>1234 5678 9123 0000</p>
+          </div>
+          <div>
+            <div id="TCNombre">
+              <p>Jane Appleseed</p>
+            </div>
+            <div id="TCVencimiento">
+              <span id="TCVencMes">00</span>
+              <span>/</span>
+              <span id="TCVencAnio">00</span>
+            </div>
+          </div>
+        </div>
+        <div class="fondoTC">
+          <img
+            id="fondoTarjeta"
+            src="img/bg-card-back.png"
+            alt="FondoTarjetaCredito"
+          />
+        </div>
+      </section>
+
+      <section class="formulario">
+        <form
+          class="formGrupo"
+          id="formulario"
+          onsubmit="validarFormulario(event)"
+        >
+          <ul>
+            <li>
+              <label for="titularTC">CARDHOLDER NAME</label>
+              <input
+                type="text"
+                id="titularTC"
+                placeholder=" e.g. Jane Appleseed"
+              />
+              <div id="errorTitularTC" class="error"></div>
+            </li>
+            <li>
+              <label for="numeroTC">CARD NUMBER</label>
+              <input
+                type="text"
+                id="numeroTC"
+                placeholder=" e.g. 1234 5678 9123 0000"
+              />
+              <div id="errorNumeroTC" class="error"></div>
+            </li>
+            <li>
+              <section class="vencimientoTC">
+                <label> EXP. DATE (MM/YY)</label>
+                <input type="text" id="mesVencimiento" placeholder="MM" />
+                <div id="errorMesVencimiento" class="error"></div>
+                <input
+                  type="text"
+                  name="anioVencimiento"
+                  id="anioVencimiento"
+                  placeholder="YY"
+                />
+                <div id="errorAnioVencimiento" class="error"></div>
+              </section>
+              <section class="cvcTC">
+                <label for="cvcTarjeta">CVC</label>
+                <input type="text" id="cvcTarjeta" placeholder=" e.g. 123" />
+                <div id="errorCvcTarjeta" class="error"></div>
+              </section>
+            </li>
+            <input
+              type="button"
+              id="btnConfirmacion"
+              value="Confirm"
+              class="btnClass"
+              onclick="validarFormulario(event); mostrarAgradecimiento"
+            />
+          </ul>
+        </form>
+      </section>
+      <section>
+        <div class="oculto" id="agradecimiento">
+          <img src="img/icon-complete.svg" alt="Imagen" id="imagen" />
+          <h1>THANK YOU!</h1>
+          <p>We've added your card details</p>
+          <input
+            type="submit"
+            id="btnContinuar"
+            value="Continue"
+            class="btnClass"
+            onclick="validarFormulario(event)"
+          />
+        </div>
+      </section>
+    </div>
+    <script src="codigo.js"></script>
+  </body>
+</html>
